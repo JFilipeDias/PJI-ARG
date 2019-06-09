@@ -6,11 +6,10 @@ public class KeyRotation : MonoBehaviour
 {
     private Quaternion originalRotation;
     private float startAngle = 0;
-    private int keyMask;
+    private float amoutRotation;
 
     public void Start()
     {
-        keyMask = LayerMask.GetMask("KeyMask");
         originalRotation = this.transform.rotation;
     }
 
@@ -20,7 +19,11 @@ public class KeyRotation : MonoBehaviour
         if (Input.touchCount > 0)
         {
             HandleTouch();
-            //Debug.Log("Tocou");
+        }
+
+        if(amoutRotation >= 270)
+        {
+            GameObject.Destroy(this.gameObject);
         }
     }
 
@@ -41,6 +44,7 @@ public class KeyRotation : MonoBehaviour
         if (playerTouch.phase == TouchPhase.Moved)
         {
             float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+            amoutRotation += angle;
             Quaternion newRotation = Quaternion.AngleAxis(angle - startAngle, this.transform.forward);
             newRotation.eulerAngles = new Vector3(0, 0, newRotation.eulerAngles.z);
             this.transform.rotation = originalRotation * newRotation;
