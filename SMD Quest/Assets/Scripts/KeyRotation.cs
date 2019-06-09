@@ -7,6 +7,7 @@ public class KeyRotation : MonoBehaviour
     private Quaternion originalRotation;
     private float startAngle = 0;
     private float amoutRotation;
+    public Transform keyHolderCenter;
 
     public void Start()
     {
@@ -21,7 +22,7 @@ public class KeyRotation : MonoBehaviour
             HandleTouch();
         }
 
-        if(amoutRotation >= 270)
+        if(amoutRotation >= 500)
         {
             GameObject.Destroy(this.gameObject);
         }
@@ -32,7 +33,7 @@ public class KeyRotation : MonoBehaviour
     {
         Touch playerTouch = Input.GetTouch(0);
 
-        Vector2 keyScreenPosition = Camera.main.WorldToScreenPoint(this.transform.position);
+        Vector2 keyScreenPosition = Camera.main.WorldToScreenPoint(keyHolderCenter.position);
         Vector2 vector = Input.GetTouch(0).position - keyScreenPosition;
 
         if (playerTouch.phase == TouchPhase.Began)
