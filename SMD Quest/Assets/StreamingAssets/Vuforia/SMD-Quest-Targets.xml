@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="10_Chave_Falsa" size="1.000000 1.000000" />
+    <ImageTarget name="09_Chave_Sistemas" size="1.000000 1.000000" />
+    <ImageTarget name="08_Chave_Jogos" size="1.000000 1.000000" />
+    <ImageTarget name="07_Chave_Design" size="1.000000 1.000000" />
+    <ImageTarget name="06_Chave_Audiovisual" size="1.000000 1.000000" />
+    <ImageTarget name="05_Bau_Sistemas" size="1.000000 1.000000" />
+    <ImageTarget name="04_Bau_Jogos" size="1.000000 1.000000" />
+    <ImageTarget name="03_Bau_Design" size="1.000000 1.000000" />
+    <ImageTarget name="02_Bau_Audiovisual" size="4.000000 4.000000" />
+    <ImageTarget name="01_Ilha" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
