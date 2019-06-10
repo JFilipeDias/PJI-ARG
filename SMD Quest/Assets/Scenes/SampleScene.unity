@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 811537494}
   - component: {fileID: 811537493}
   m_Layer: 0
-  m_Name: ImageTarget
+  m_Name: Chave AudioVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
