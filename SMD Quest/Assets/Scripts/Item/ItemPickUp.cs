@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public Item item;
+    private Transform itemTrasnform;
     private int itemMask;
 
     private void Awake()
@@ -16,18 +17,28 @@ public class ItemPickUp : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Touch playerTouch = Input.GetTouch(0);
-            Ray camRay = Camera.main.ScreenPointToRay(playerTouch.position);
-            RaycastHit rayHit;
-
-            if (Physics.Raycast(camRay, out rayHit, Mathf.Infinity, itemMask))
-                PickUp();
+            CheckTouch();
         }
     }
 
+
+    private void CheckTouch()
+    {
+        Touch playerTouch = Input.GetTouch(0);
+        Ray camRay = Camera.main.ScreenPointToRay(playerTouch.position);
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(camRay, out rayHit, Mathf.Infinity, itemMask))
+        {
+            itemTrasnform = rayHit.transform;
+            itemTrasnform.GetComponent<ItemPickUp>().PickUp();
+        }
+    }
+
+
     public void PickUp()
     {
-        bool wasPickedUp = Inventory.instance.Add(item);
+        bool wasPickedUp = Inventory.instance.Add(itemTrasnform.GetComponent<ItemPickUp>().item);
 
         if (wasPickedUp)
             Destroy(this.gameObject);
