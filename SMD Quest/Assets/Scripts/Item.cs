@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Iventory/Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
     new public string name;
     public Sprite icon = null;
+
+    public virtual void Use()
+    {
+
+    }
 }

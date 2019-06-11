@@ -5,7 +5,12 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public Item item;
-    private int itemMask = LayerMask.GetMask("ItemMask");
+    private int itemMask;
+
+    private void Awake()
+    {
+        itemMask = LayerMask.GetMask("ItemMask");
+    }
 
     private void Update()
     {
