@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Totem Audiovisual
   m_EditorClassIdentifier: 
   name: Totem Audiovisual
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 606d0ad4a1beceb40ba20939bc596c2d, type: 3}

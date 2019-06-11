@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Totem Jogos
   m_EditorClassIdentifier: 
   name: Totem Jogos
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 36146c880f7072549b7434a43d5224da, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chave Design
   m_EditorClassIdentifier: 
   name: Chave Design
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 10c56452b6070f64e95fadc267d6a79c, type: 3}

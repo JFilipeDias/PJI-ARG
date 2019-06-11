@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Totem Design
   m_EditorClassIdentifier: 
   name: Totem Design
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a452eec00479cdc4784bcbfdc8a5d080, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chave Jogos
   m_EditorClassIdentifier: 
   name: Chave Jogos
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e0bb2b5c009b1fc4a928b6c9a468e9da, type: 3}

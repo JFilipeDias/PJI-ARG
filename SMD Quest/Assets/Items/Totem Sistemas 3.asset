@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Totem Sistemas 3
   m_EditorClassIdentifier: 
   name: Totem Sistemas
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 914ce054dd847524b92fb53bd93c0901, type: 3}

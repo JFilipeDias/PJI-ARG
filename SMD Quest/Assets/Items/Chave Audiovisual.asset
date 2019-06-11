@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chave Audiovisual
   m_EditorClassIdentifier: 
   name: Chave Audiovisual
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 564c877210aed1b4cab65dc65774d2c5, type: 3}
