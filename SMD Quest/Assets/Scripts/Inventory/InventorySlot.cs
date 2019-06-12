@@ -6,6 +6,7 @@ public class InventorySlot : MonoBehaviour
     public Image slotIcon;
     private Item item;
     public Button useItemButton;
+    private GameObject goalTarget;
 
     public void AddItem(Item newItem)
     {
@@ -29,7 +30,41 @@ public class InventorySlot : MonoBehaviour
     {
         Inventory.instance.Remove(item);
 
-        if (item != null)
-            item.Use();
+        if (item != null){
+
+            switch (item.name)
+            {
+                case "Chave Audiovisual":
+                    goalTarget = GameObject.Find("Target Bau Audiovisual");
+                    if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
+                        item.Use();
+                    break;
+
+                case "Chave Design":
+                    goalTarget = GameObject.Find("Target Bau Design");
+                    if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
+                        item.Use();
+                    break;
+                    
+                case "Chave Jogos":
+                    goalTarget = GameObject.Find("Target Bau Design");
+                    if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
+                        item.Use();
+                    break;
+                    
+                case "Chave Sistemas":
+                    goalTarget = GameObject.Find("Target Bau Design");
+                    if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
+                        item.Use();
+                    break;
+                    
+                case "Chave Falsa":
+                        item.Use();
+                    break;
+                    
+            }
+          
+            
+        }
     }
 }
