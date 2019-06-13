@@ -31,34 +31,33 @@ public class InventorySlot : MonoBehaviour
         Inventory.instance.Remove(item);
 
         if (item != null){
-
             switch (item.name)
             {
-                case "Chave Audiovisual":
-                    goalTarget = GameObject.Find("Target Bau Audiovisual");
+                case "Key Audiovisual":
+                    goalTarget = GameObject.Find("Target Chest Audiovisual");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
 
-                case "Chave Design":
-                    goalTarget = GameObject.Find("Target Bau Design");
+                case "Key Design":
+                    goalTarget = GameObject.Find("Target Chest Design");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
                     
-                case "Chave Jogos":
-                    goalTarget = GameObject.Find("Target Bau Jogos");
+                case "Key Games":
+                    goalTarget = GameObject.Find("Target Chest Games");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
                     
-                case "Chave Sistemas":
-                    goalTarget = GameObject.Find("Target Bau Sistemas");
+                case "Key Systems":
+                    goalTarget = GameObject.Find("Target Chest Systems");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
                     
-                case "Chave Falsa":
+                case "Key Fake":
                         item.Use();
                     break;
                     

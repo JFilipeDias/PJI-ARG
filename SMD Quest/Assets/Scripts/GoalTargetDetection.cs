@@ -3,6 +3,7 @@ using Vuforia;
 
 public class GoalTargetDetection : MonoBehaviour, ITrackableEventHandler
 {
+    [HideInInspector]
     public bool isTracked;
     private TrackableBehaviour mTrackableBehaviour;
 
