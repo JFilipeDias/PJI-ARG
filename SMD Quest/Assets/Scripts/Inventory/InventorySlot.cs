@@ -47,13 +47,13 @@ public class InventorySlot : MonoBehaviour
                     break;
                     
                 case "Chave Jogos":
-                    goalTarget = GameObject.Find("Target Bau Design");
+                    goalTarget = GameObject.Find("Target Bau Jogos");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
                     
                 case "Chave Sistemas":
-                    goalTarget = GameObject.Find("Target Bau Design");
+                    goalTarget = GameObject.Find("Target Bau Sistemas");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         item.Use();
                     break;
