@@ -88,7 +88,6 @@ public class InventorySlot : MonoBehaviour
     {
         string deletedItem = item.name;
         inventoryCanvas.Close();
-        ClearSlot();
         Inventory.instance.Remove(item);
 
         if (deletedItem == "Key Audiovisual" ||
