@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 706819336391077561}
   - component: {fileID: 706819336381219167}
   m_Layer: 0
-  m_Name: Chest_Base
+  m_Name: ChestBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ Animator:
   m_GameObject: {fileID: 706819336390587033}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 41696203e0554c14098737556e208236, type: 3}
-  m_Controller: {fileID: 9100000, guid: fee93f8e95732bb47b8d6a95ed47c8ee, type: 2}
+  m_Controller: {fileID: 9100000, guid: bff32acd232f6da4ba03bd8847c031a9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

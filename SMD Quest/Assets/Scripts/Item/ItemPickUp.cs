@@ -12,6 +12,7 @@ public class ItemPickUp : MonoBehaviour
         if (item.name == "Key Fake")
         {
             int FakeKeyIconRandomizer = Random.Range(1, 4);
+
             if (FakeKeyIconRandomizer == 1)
                 item.icon =  item.FakeKeyIcon[0];
             else if (FakeKeyIconRandomizer == 2)

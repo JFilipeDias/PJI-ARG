@@ -75,20 +75,25 @@ public class InventorySlot : MonoBehaviour
 
     public void Use()
     {
+        string deletedItem = item.name;
         Inventory.instance.Remove(item);
         ClearSlot();
         inventoryCanvas.Close();
 
+        Debug.Log("Removeu o item do iventário");
 
-        if (item.name == "Key Audiovisual" ||
-            item.name == "Key Design" ||
-            item.name == "Key Games" ||
-            item.name == "Key Systems")
+        if (deletedItem == "Key Audiovisual" ||
+            deletedItem == "Key Design" ||
+            deletedItem == "Key Games" ||
+            deletedItem == "Key Systems")
+        {
+            Debug.Log("Usou a Chave. Vai instanciar ela.");
             UseKey();
-        else if (item.name == "Totem Audiovisual" ||
-            item.name == "Totem Design" ||
-            item.name == "Totem Games" ||
-            item.name == "Totem Systems")
+        }
+        else if (deletedItem == "Totem Audiovisual" ||
+            deletedItem == "Totem Design" ||
+            deletedItem == "Totem Games" ||
+            deletedItem == "Totem Systems")
             UseTotem();
     }
 
@@ -97,7 +102,7 @@ public class InventorySlot : MonoBehaviour
     {
         Transform spawnPosition = goalTarget.transform.GetChild(0).GetChild(3);
         Debug.Log("Spawn position: " + spawnPosition.name);
-        GameObject keyAnimated = Instantiate(Resources.Load("Prefabs/3D/KeyAnimated"), spawnPosition) as GameObject;
+        GameObject keyAnimated = Instantiate(Resources.Load("Prefabs/3D/KeyAnimated", typeof(GameObject)), spawnPosition) as GameObject;
         keyAnimated.GetComponent<Animator>().SetTrigger("Opening");
     }
 
