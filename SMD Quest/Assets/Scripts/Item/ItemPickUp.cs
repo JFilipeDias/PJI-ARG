@@ -24,7 +24,7 @@ public class ItemPickUp : MonoBehaviour
         }
 
         bool wasPickedUp = Inventory.instance.Add(item);
-
+        Debug.Log("foi pegue: " + wasPickedUp);
         if (wasPickedUp)
             Destroy(this.gameObject);
     }   

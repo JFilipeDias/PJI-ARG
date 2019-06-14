@@ -87,17 +87,15 @@ public class InventorySlot : MonoBehaviour
     public void Use()
     {
         string deletedItem = item.name;
-        Inventory.instance.Remove(item);
-        ClearSlot();
         inventoryCanvas.Close();
+        ClearSlot();
+        Inventory.instance.Remove(item);
 
         if (deletedItem == "Key Audiovisual" ||
             deletedItem == "Key Design" ||
             deletedItem == "Key Games" ||
-            deletedItem == "Key Systems")
-        {
+            deletedItem == "Key Systems") 
             UseKey();
-        }
         else if (deletedItem == "Totem Audiovisual" ||
             deletedItem == "Totem Design" ||
             deletedItem == "Totem Games" ||
