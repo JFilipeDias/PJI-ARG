@@ -6,13 +6,13 @@ public class InventorySlot : MonoBehaviour
     public Image slotIcon;
     private Item item;
     public Button useItemButton;
-    private GameObject inventoryUI;
+    private InventoryUI inventoryCanvas;
     private GameObject goalTarget;
 
 
     private void Start()
     {
-        inventoryUI = GameObject.Find("Inventory");
+        inventoryCanvas = GameObject.Find("Canvas").GetComponent<InventoryUI>();
     }
 
 
@@ -75,9 +75,35 @@ public class InventorySlot : MonoBehaviour
 
     public void Use()
     {
-        ClearSlot();
-        inventoryUI.SetActive(false);
         Inventory.instance.Remove(item);
-        goalTarget.GetComponentInChildren<Animator>().SetTrigger("Opening");
+        ClearSlot();
+        inventoryCanvas.Close();
+
+
+        if (item.name == "Key Audiovisual" ||
+            item.name == "Key Design" ||
+            item.name == "Key Games" ||
+            item.name == "Key Systems")
+            UseKey();
+        else if (item.name == "Totem Audiovisual" ||
+            item.name == "Totem Design" ||
+            item.name == "Totem Games" ||
+            item.name == "Totem Systems")
+            UseTotem();
+    }
+
+
+    public void UseKey()
+    {
+        Transform spawnPosition = goalTarget.transform.GetChild(0).GetChild(3);
+        Debug.Log("Spawn position: " + spawnPosition.name);
+        GameObject keyAnimated = Instantiate(Resources.Load("Prefabs/3D/KeyAnimated"), spawnPosition) as GameObject;
+        keyAnimated.GetComponent<Animator>().SetTrigger("Opening");
+    }
+
+
+    public void UseTotem()
+    {
+
     }
 }

@@ -5,9 +5,5 @@ public class Item : ScriptableObject
 {
     new public string name;
     public Sprite icon = null;
-
-    public virtual void Use()
-    {
-
-    }
+    public Sprite [] FakeKeyIcon;
 }
