@@ -25,10 +25,13 @@ public class GoalTargetDetection : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             isTracked = true;
+            Debug.Log(this.name + " encontrado");
         }
-        else
+        else if(previousStatus == TrackableBehaviour.Status.TRACKED &&
+                 newStatus == TrackableBehaviour.Status.NO_POSE)
         {
             isTracked = false;
+            Debug.Log(this.name + " perdido");
         }
     }
 }

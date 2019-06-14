@@ -6,7 +6,15 @@ public class InventorySlot : MonoBehaviour
     public Image slotIcon;
     private Item item;
     public Button useItemButton;
+    private GameObject inventoryUI;
     private GameObject goalTarget;
+
+
+    private void Start()
+    {
+        inventoryUI = GameObject.Find("Inventory");
+    }
+
 
     public void AddItem(Item newItem)
     {
@@ -28,7 +36,7 @@ public class InventorySlot : MonoBehaviour
 
     public void OnUseItemButton()
     {
-        Inventory.instance.Remove(item);
+        
 
         if (item != null){
             switch (item.name)
@@ -36,34 +44,40 @@ public class InventorySlot : MonoBehaviour
                 case "Key Audiovisual":
                     goalTarget = GameObject.Find("Target Chest Audiovisual");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
-                        item.Use();
+                        Use();
                     break;
 
                 case "Key Design":
                     goalTarget = GameObject.Find("Target Chest Design");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
-                        item.Use();
+                        Use();
                     break;
                     
                 case "Key Games":
                     goalTarget = GameObject.Find("Target Chest Games");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
-                        item.Use();
+                        Use();
                     break;
                     
                 case "Key Systems":
                     goalTarget = GameObject.Find("Target Chest Systems");
                     if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
-                        item.Use();
+                        Use();
                     break;
                     
                 case "Key Fake":
-                        item.Use();
+                        Use();
                     break;
-                    
             }
-          
-            
         }
+    }
+
+
+    public void Use()
+    {
+        ClearSlot();
+        inventoryUI.SetActive(false);
+        Inventory.instance.Remove(item);
+        goalTarget.GetComponentInChildren<Animator>().SetTrigger("Opening");
     }
 }

@@ -218,3 +218,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIcon: {fileID: 6181639426353732382}
   useItemButton: {fileID: 8188373528905908261}
+  inventoryUI: {fileID: 0}
