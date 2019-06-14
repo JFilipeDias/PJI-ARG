@@ -1,14 +1,36 @@
 fileFormatVersion: 2
-guid: 90dfb326deb20254b8477b0c729d26f5
+guid: ed50ee16eebc23f43a12766464efce52
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material.001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Base_Toten_Low
+    100000: Asset_Island.001
+    100002: Asset_Island.002
+    100004: Asset_Island.003
+    100006: Asset_Island.004
+    100008: Asset_Island.005
+    100010: //RootNode
+    400000: Asset_Island.001
+    400002: Asset_Island.002
+    400004: Asset_Island.003
+    400006: Asset_Island.004
+    400008: Asset_Island.005
+    400010: //RootNode
+    2100000: No Name
+    2300000: Asset_Island.001
+    2300002: Asset_Island.002
+    2300004: Asset_Island.003
+    2300006: Asset_Island.004
+    2300008: Asset_Island.005
+    3300000: Asset_Island.001
+    3300002: Asset_Island.002
+    3300004: Asset_Island.003
+    3300006: Asset_Island.004
+    3300008: Asset_Island.005
+    4300000: Asset_Island.005
+    4300002: Asset_Island.004
+    4300004: Asset_Island.003
+    4300006: Asset_Island.002
+    4300008: Asset_Island.001
   externalObjects: {}
   materials:
     importMaterials: 1

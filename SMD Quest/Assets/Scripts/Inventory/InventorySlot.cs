@@ -64,10 +64,15 @@ public class InventorySlot : MonoBehaviour
                     break;
                     
                 case "Key Fake":
-                    if (GameObject.Find("Target Chest Audiovisual").GetComponent<GoalTargetDetection>().isTracked ||
-                        GameObject.Find("Target Chest Design").GetComponent<GoalTargetDetection>().isTracked ||
-                        GameObject.Find("Target Chest Games").GetComponent<GoalTargetDetection>().isTracked ||
-                        GameObject.Find("Target Chest Systems").GetComponent<GoalTargetDetection>().isTracked)
+                        Use();
+                    break;
+
+                case "Totem Audiovisual":
+                case "Totem Design":
+                case "Totem Games":
+                case "Totem Systems":
+                    goalTarget = GameObject.Find("Target Island");
+                    if (goalTarget.GetComponent<GoalTargetDetection>().isTracked)
                         Use();
                     break;
             }
@@ -81,8 +86,6 @@ public class InventorySlot : MonoBehaviour
         Inventory.instance.Remove(item);
         ClearSlot();
         inventoryCanvas.Close();
-
-        Debug.Log("Removeu o item do iventário");
 
         if (deletedItem == "Key Audiovisual" ||
             deletedItem == "Key Design" ||
