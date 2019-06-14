@@ -7,6 +7,7 @@ public class GoalTargetDetection : MonoBehaviour, ITrackableEventHandler
     public bool isTracked;
     private TrackableBehaviour mTrackableBehaviour;
 
+
     void Start()
     {
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -15,6 +16,7 @@ public class GoalTargetDetection : MonoBehaviour, ITrackableEventHandler
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
     }
+
 
     public void OnTrackableStateChanged(
                                    TrackableBehaviour.Status previousStatus,

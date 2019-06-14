@@ -36,8 +36,6 @@ public class InventorySlot : MonoBehaviour
 
     public void OnUseItemButton()
     {
-        
-
         if (item != null){
             switch (item.name)
             {
@@ -66,6 +64,10 @@ public class InventorySlot : MonoBehaviour
                     break;
                     
                 case "Key Fake":
+                    if (GameObject.Find("Target Chest Audiovisual").GetComponent<GoalTargetDetection>().isTracked ||
+                        GameObject.Find("Target Chest Design").GetComponent<GoalTargetDetection>().isTracked ||
+                        GameObject.Find("Target Chest Games").GetComponent<GoalTargetDetection>().isTracked ||
+                        GameObject.Find("Target Chest Systems").GetComponent<GoalTargetDetection>().isTracked)
                         Use();
                     break;
             }
@@ -87,7 +89,6 @@ public class InventorySlot : MonoBehaviour
             deletedItem == "Key Games" ||
             deletedItem == "Key Systems")
         {
-            Debug.Log("Usou a Chave. Vai instanciar ela.");
             UseKey();
         }
         else if (deletedItem == "Totem Audiovisual" ||
@@ -101,9 +102,7 @@ public class InventorySlot : MonoBehaviour
     public void UseKey()
     {
         Transform spawnPosition = goalTarget.transform.GetChild(0).GetChild(3);
-        Debug.Log("Spawn position: " + spawnPosition.name);
-        GameObject keyAnimated = Instantiate(Resources.Load("Prefabs/3D/KeyAnimated", typeof(GameObject)), spawnPosition) as GameObject;
-        keyAnimated.GetComponent<Animator>().SetTrigger("Opening");
+        Instantiate(Resources.Load("Prefabs/3D/KeyAnimated", typeof(GameObject)), spawnPosition);
     }
 
 

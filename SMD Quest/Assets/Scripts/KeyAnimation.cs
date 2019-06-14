@@ -6,7 +6,9 @@ public class KeyAnimation : MonoBehaviour
 {
     public void PlayChestAnimation()
     {
-        Animator chestAnimator = GetComponentInParent<Animator>();
+        Animator chestAnimator = transform.parent.GetComponentInParent<Animator>();
+        Debug.Log("Chest Animator: " + chestAnimator.name);
         chestAnimator.SetTrigger("Opening");
+        chestAnimator.transform.GetChild(4).gameObject.AddComponent<BoxCollider>();
     }
 }
