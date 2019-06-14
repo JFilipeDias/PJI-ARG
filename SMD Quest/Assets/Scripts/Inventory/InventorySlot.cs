@@ -8,6 +8,10 @@ public class InventorySlot : MonoBehaviour
     public Button useItemButton;
     private InventoryUI inventoryCanvas;
     private GameObject goalTarget;
+    public GameObject totemAudiovisual;
+    public GameObject totemDesign;
+    public GameObject totemGames;
+    public GameObject totemSystems;
 
 
     private void Start()
@@ -98,7 +102,7 @@ public class InventorySlot : MonoBehaviour
             deletedItem == "Totem Design" ||
             deletedItem == "Totem Games" ||
             deletedItem == "Totem Systems")
-            UseTotem();
+            UseTotem(deletedItem);
     }
 
 
@@ -109,8 +113,15 @@ public class InventorySlot : MonoBehaviour
     }
 
 
-    public void UseTotem()
+    public void UseTotem(string deletedItem)
     {
-
+        if (deletedItem == "Totem Audiovisual")
+            totemAudiovisual.SetActive(true);
+        else if (deletedItem == "Totem Design")
+            totemDesign.SetActive(true);
+        else if (deletedItem == "Totem Games")
+            totemGames.SetActive(true);
+        else if (deletedItem == "Totem Systems")
+            totemSystems.SetActive(true);
     }
 }
