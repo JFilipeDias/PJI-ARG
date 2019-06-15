@@ -6,18 +6,12 @@ public class InventorySlot : MonoBehaviour
     public Image slotIcon;
     private Item item;
     public Button useItemButton;
-    private InventoryUI inventoryCanvas;
+    public InventoryUI inventoryCanvas;
     private GameObject goalTarget;
     public GameObject totemAudiovisual;
     public GameObject totemDesign;
     public GameObject totemGames;
     public GameObject totemSystems;
-
-
-    private void Start()
-    {
-        inventoryCanvas = GameObject.Find("Canvas").GetComponent<InventoryUI>();
-    }
 
 
     public void AddItem(Item newItem)
@@ -41,7 +35,7 @@ public class InventorySlot : MonoBehaviour
     public void OnUseItemButton()
     {
         if (item != null){
-            switch (item.name)
+             switch (item.name)
             {
                 case "Key Audiovisual":
                     goalTarget = GameObject.Find("Target Chest Audiovisual");
